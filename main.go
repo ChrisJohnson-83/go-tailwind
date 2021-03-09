@@ -53,3 +53,9 @@ func (s *server) handleIndex() http.HandlerFunc {
 		http.ServeFile(w, r, filepath.Join("public", "index.html"))
 	}
 }
+
+func (s *server) handleTest() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, filepath.Join("public", "test.html"))
+	}
+}
