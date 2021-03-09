@@ -2,7 +2,6 @@
   "name": "go-app",
   "version": "1.0.1",
   "scripts": {
-    "build:tailwind": "NODE_ENV=production postcss src/base.css -o public/build/base.css",
     "watch": "postcss src/base.css -o public/build/base.css -w",
     "build": "NODE_ENV=production postcss src/base.css -o public/build/base.css"
   },
