@@ -16,19 +16,20 @@ func main() {
 }
 
 func run(args []string) error {
+	port := os.Getenv("DB_PORT")
+	if port == "" {
+		port = "8080" // Default port if not specified
+	}
 	flags := flag.NewFlagSet(args[0], flag.ContinueOnError)
-	var (
-		port = flags.Int("port", 8080, "port to listen on")
-	)
 	if err := flags.Parse(args[1:]); err != nil {
 		return err
 	}
-	addr := fmt.Sprintf("0.0.0.0:%d", *port)
+	addr := fmt.Sprintf("0.0.0.0:%s", port)
 	srv, err := newServer()
 	if err != nil {
 		return err
 	}
-	fmt.Printf("cccs listening on :%d\n", *port)
+	fmt.Printf("cccs listening on :%s\n", port)
 	return http.ListenAndServe(addr, srv)
 }
 
