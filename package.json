@@ -1,9 +1,12 @@
 {
   "name": "go-app",
   "version": "1.0.1",
+  "description": "Starter pack for Go + TailwindCSS stack.",
+  "main": "postcss.config.js",
   "scripts": {
-    "watch": "postcss src/base.css -o public/build/base.css -w",
-    "build": "NODE_ENV=production postcss src/base.css -o public/build/base.css"
+    "watch:tailwind": "postcss src/base.css -o public/build/base.css -w",
+    "build:tailwind": "NODE_ENV=production postcss src/base.css -o public/build/base.css",
+    "build": "npm run build:tailwind"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
@@ -19,17 +22,9 @@
     "@tailwindcss/ui": "^0.7.2",
     "watch": "^1.0.2"
   },
-  "description": "Crunchy starter pack for Go, Svelte + TailwindCSS stack.",
-  "main": "postcss.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChrisJohnson-83/go-svelte-tailwind.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ChrisJohnson-83/go-svelte-tailwind/issues"
-  },
-  "homepage": "https://github.com/ChrisJohnson-83/go-svelte-tailwind#readme"
+  "license": "ISC"
 }
