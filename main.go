@@ -16,7 +16,7 @@ func main() {
 }
 
 func run(args []string) error {
-	port := os.Getenv("DB_PORT")
+	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080" // Default port if not specified
 	}
